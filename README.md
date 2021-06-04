@@ -47,7 +47,7 @@ Bind event for action
 ```javascript
 // it's like : pusher.bind('yourEventName', callback)
 notifly.bind('send-message', function(data) {
-    listReceivedMessage.innerHTML += '<li>'+ data +'</li>';
+    uiGuestMessage.innerHTML += `<span>${data}</span><hr/>`;
 });
 ```
 Trigger event to other channel
