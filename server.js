@@ -1,20 +1,29 @@
 const config = {
-    port:3000,
-    client:[
+    port: 3000,
+    client: [
         "http://localhost:8080"
     ]
 };
 
-var http = require('http').createServer();
+const {
+    v4: uuidv4
+} = require('uuid');
+var path = require('path');
+var express = require('express');
+var app = express();
+app.use(express.static(path.join(__dirname, 'public')));
+
+
+var http = require('http').createServer(app);
 var socketIO = require('socket.io');
 var socket = socketIO(http, {
     cors: {
-      origin: config.client,
+        origin: config.client,
     },
-  });
-// Create your own SECRET_KEY for security generate
-// and it's up to you to generate
-var APP_ID = 'ID-9dYfz1n2Gwymp8UiSN57V8ofgGFln9';
+});
+// APP_ID for security, After running, you'll get APP-ID 
+// and copy APP-ID to your notifly client
+var APP_ID = 'ID-' + uuidv4();
 
 socket.on('connection', (event) => {
     console.log('Connected');
@@ -29,5 +38,6 @@ socket.on('connection', (event) => {
 });
 
 http.listen(config.port, () => {
-    console.log('Notifly started : http://localhost:' + config.port);
+    console.log('Notifly APP ID : ' + APP_ID);
+    console.log('Server started');
 });
