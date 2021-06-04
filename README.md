@@ -65,7 +65,7 @@ uiBtnSend.addEventListener('click', function(){
       uiTxtMessage.value = '';
 });
 ```
-Open your other other channel in other session and try it !
+Open your other channel in different session and try it !
 Congrats your notifly should work now 😁!
 
 ## Run Demo
