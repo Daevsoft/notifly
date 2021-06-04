@@ -1,20 +1,14 @@
 const config = {
     port: 3000,
     client: [
-        "http://localhost:8080"
+        "http://localhost:3000"
     ]
 };
 
 const {
     v4: uuidv4
 } = require('uuid');
-var path = require('path');
-var express = require('express');
-var app = express();
-app.use(express.static(path.join(__dirname, 'public')));
-
-
-var http = require('http').createServer(app);
+var http = require('http').createServer();
 var socketIO = require('socket.io');
 var socket = socketIO(http, {
     cors: {
