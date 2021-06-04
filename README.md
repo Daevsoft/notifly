@@ -14,7 +14,7 @@ Sample ``index.html`` file :
     <label for="txtChannel">Send Message</label><br>
     <input type="text" id="txtChannel" placeholder="Other Channel"><br>
     <textarea id="txtMessage" placeholder="Message"></textarea><br>
-    <button id="btnSend">Send message</button>
+    <button type="button" id="btnSend">Send message</button>
  </form>
 <script src="./src/index.js" type="module"></script>
 ```
