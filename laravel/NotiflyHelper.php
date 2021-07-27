@@ -1,6 +1,5 @@
 <?php
 namespace App\helpers;
-use GuzzleHttp\Client;
 
 class NotiflyHelper {
     private static $app_id = NULL;
