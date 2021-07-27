@@ -37,6 +37,17 @@ import Notifly from './notifly.js';
 var notifly = new Notifly({
     appId:'ID-9dYfz1n2Gwymp8UiSN57V8ofgGFln9'
 });
+...
+```
+Or embed with script tag
+```html
+<script src="./notifly.min.js"></script>
+<script>
+    var notifly = new Notifly({
+        appId:'ID-9dYfz1n2Gwymp8UiSN57V8ofgGFln9'
+    });
+    ...
+</script>
 ```
 Subscribe client channel
 ```javascript
