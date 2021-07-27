@@ -39,7 +39,8 @@ Initialize Notifly instance :
 import Notifly from './notifly.js';
 
 var notifly = new Notifly({
-    appId:'ID-0u0809-91as3-a324a-43f4-98a6e83bf312f'
+    appId:'ID-0u0809-91as3-a324a-43f4-98a6e83bf312f',
+    url: 'https://mydomain.com' // This parameter is optional. Default is : localhost:3000
 });
 ...
 ```
@@ -48,7 +49,8 @@ Or embed with script tag
 <script src="./notifly.min.js"></script>
 <script>
     var notifly = new Notifly({
-        appId:'ID-0u0809-91as3-a324a-43f4-98a6e83bf312f'
+        appId:'ID-0u0809-91as3-a324a-43f4-98a6e83bf312f',
+        url: 'https://mydomain.com' // This parameter is optional. Default is : localhost:3000
     });
     ...
 </script>
