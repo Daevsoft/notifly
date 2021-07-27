@@ -1,4 +1,4 @@
-# Notifly For Laravel Developer
+# Notifly For Laravel Developers
 Notifly works on php laravel
 ## Run Node Server
 Run your `node server_secure.js`
