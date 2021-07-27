@@ -39,7 +39,7 @@ Initialize Notifly instance :
 import Notifly from './notifly.js';
 
 var notifly = new Notifly({
-    appId:'ID-9dYfz1n2Gwymp8UiSN57V8ofgGFln9'
+    appId:'ID-0u0809-91as3-a324a-43f4-98a6e83bf312f'
 });
 ...
 ```
@@ -48,7 +48,7 @@ Or embed with script tag
 <script src="./notifly.min.js"></script>
 <script>
     var notifly = new Notifly({
-        appId:'ID-9dYfz1n2Gwymp8UiSN57V8ofgGFln9'
+        appId:'ID-0u0809-91as3-a324a-43f4-98a6e83bf312f'
     });
     ...
 </script>
