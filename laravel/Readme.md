@@ -1,7 +1,7 @@
 # Notifly For Laravel Developers
 Notifly works on php laravel
 ## Run Node Server
-Run your `node server_secure.js`
+Run your `node server.js`
 ## Copy Paste NotiflyHelper
 Coy paste `NotiflyHelper.php` file into laravel helper directory usually is `app/helpers/..`
 ## Configure Notifly
