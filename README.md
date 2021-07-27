@@ -4,7 +4,11 @@ Socket IO Client like Pusher Client. Simple &amp; Awesome
 ## Getting started
 Run your socket server
 ``npm run server``
-
+When server running it will generate Notifly APP ID
+```terminal
+Notifly APP ID : ID-0u0809-91as3-a324a-43f4-98a6e83bf312f
+Server started
+```
 ## Tutorial
 ### HTML
 Sample ``index.html`` file :
@@ -29,7 +33,7 @@ var uiBtnSend = document.getElementById('btnSend');
 ```
 
 Initialize Notifly instance :
-``Note the appId is same as APP-ID in server.js file on node``
+``Note the appId is generated automatically when server.js was running, then copy paste into javscript client``
 ```javascript
 ...
 import Notifly from './notifly.js';
