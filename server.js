@@ -1,8 +1,8 @@
-const app = express();
 const fs = require("fs");
 // use https for SSL
 const http = require('https');
 const express = require('express');
+const app = express();
 const { v4: uuidv4 } = require('uuid');
 
 const config = {
@@ -18,7 +18,7 @@ const config = {
     }, */
     socket: {
         cors: {
-            origin: 'http://localhost',
+            origin: 'http://localhost',// "https://www.yourdomain.com"
         },
     }
 };
