@@ -7,6 +7,7 @@ Run your socket server
 When server running it will generate Notifly APP ID
 ```terminal
 Notifly APP ID : ID-0u0809-91as3-a324a-43f4-98a6e83bf312f
+Notifly SECRET KEY : YourSecretKey
 Server started
 ```
 ## Tutorial
