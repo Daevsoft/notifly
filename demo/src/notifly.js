@@ -17,14 +17,22 @@ class Notifly {
         this.channel = channel;
     }
     bind(eventName, callback) {
-        this.socket.on(this.channel + '-' + eventName, callback);
+        if(this.channel !== null)
+            this.socket.on(this.channel + '-' + eventName, callback);
     }
     trigger(channel, eventName, data) {
-        this.socket.emit(this.config.appId + '-notifly', {
-            channel: channel,
-            event: eventName,
-            data: data
-        });
+        if(this.channel !== null)
+            this.socket.emit(this.config.appId + '-notifly', {
+                channel: channel,
+                event: eventName,
+                data: data
+            });
+    }
+    unsubscribe(){
+        if(this.socket !== null && this.socket.connected){
+            this.socket.disconnect();
+            this.channel = null;
+        }
     }
 }
 export default Notifly;

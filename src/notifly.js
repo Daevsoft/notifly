@@ -26,5 +26,11 @@ class Notifly {
             data: data
         });
     }
+    unsubscribe() {
+        if(null !== this.socket && this.socket.connected){
+            this.socket.disconnect();
+            this.channel = null;
+        }
+    }
 }
 export default Notifly;

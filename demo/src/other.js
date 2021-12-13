@@ -5,7 +5,8 @@ var txtMessage = document.getElementById('txtMessage');
 import Notifly from './notifly.js';
 
 var notifly = new Notifly({
-    appId:'ID-9dYfz1n2Gwymp8UiSN57V8ofgGFln9'
+    url:'http://localhost',
+    appId:'ID-78fcd518-ff6e-4303-8792-07acb8ec694c'
 });
 // is same as pusher.subscribe('channelName')
 notifly.subscribe('ch-2');

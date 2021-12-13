@@ -1,20 +1,18 @@
 <?php
-namespace App\helpers;
-
 class NotiflyHelper {
     private $app_id = NULL;
     private $host = NULL;
     private $port = NULL;
     private $secret_key = NULL;
     private $verify_ssl = FALSE;
-    private static $thisObj = NULL;
 
     public function __construct() {
-        $this->host         = env('NOTIFLY_HOST', url());
-        $this->secret_key   = env('NOTIFLY_SECRET_KEY', '');
-        $this->app_id       = env('NOTIFLY_APP_ID');
-        $this->port         = env('NOTIFLY_PORT', '3000');
-        $this->verify_ssl   = env('NOTIFLY_IS_VERIFY', 'FALSE');
+        $ci =& get_instance();
+        $this->host         = $ci->config->item('NOTIFLY_HOST');
+        $this->secret_key   = $ci->config->item('NOTIFLY_SECRET_KEY');
+        $this->app_id       = $ci->config->item('NOTIFLY_APP_ID');
+        $this->port         = $ci->config->item('NOTIFLY_PORT');
+        $this->verify_ssl   = $ci->config->item('NOTIFLY_IS_VERIFY');
     }
 
     private function getHost(){
@@ -57,17 +55,18 @@ class NotiflyHelper {
             "Content-Type: application/json",
             "Accept: application/json",
         ]);
+        // echo $content;
         $page = curl_exec($ch);
         curl_close($ch);
         return $page;
     }
     public function push($channel, $event, $data)
     {
-        $content    = $this->initContent($channel, $event, $data);
-        $url        = $this->getHost().'/io';
-        $options    = $this->getOptions($content);
-        $context    = stream_context_create( $options );
-        $result     = $this->post( $url, $content );
+        $content = $this->initContent($channel, $event, $data);
+        $url = $this->getHost().'/io';
+        $options = $this->getOptions($content);
+        $context  = stream_context_create( $options );
+        $result = $this->post( $url, $content );
         return $result;
     }
     public static function send($channel, $event, $data)
